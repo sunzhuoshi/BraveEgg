@@ -9,11 +9,17 @@
     <title>Brave Egg</title>
     <link rel="shortcut icon" href="res/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="res/Icon.png" />
+    <style type="text/css">
+        html body {
+            background: #000;
+        }
+        body > * {
+            margin: 0 auto;
+        }
+    </style>
 </head>
-<body style="padding:0; margin: 0; background: #000;">
-<div style="text-align: center; font-size: 0">
-    <canvas id="gameCanvas" width="460" height="320"></canvas>
-</div>
+<body>
+<canvas id="gameCanvas" width="460" height="320"></canvas>
 </body>
 </html>
 <script src="cocos2d.js"></script>

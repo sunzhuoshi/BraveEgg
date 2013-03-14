@@ -41,21 +41,21 @@ var PreloadResources = [
 
     //sound
     {
-        type: 'sound', src: 'res/StartBackgroundMusic'
+        type: 'sound', src: 'res/StartBackgroundMusic.mp3'
     },
     {
-        type: 'sound', src: 'res/CombatBackgroundMusic'
+        type: 'sound', src: 'res/CombatBackgroundMusic.mp3'
     },
     {
-        type: 'sound', src: 'res/LevelFailedBackgroundMusic'
+        type: 'sound', src: 'res/LevelFailedBackgroundMusic.mp3'
     },
     {
-        type: 'sound', src: 'res/EggExplosion'
+        type: 'sound', src: 'res/EggExplosion.wav'
     },
     {
-        type: 'sound', src: 'res/Menu'
+        type: 'sound', src: 'res/Menu.wav'
     },
     {
-        type: 'sound', src: 'res/BirdSelect'
+        type: 'sound', src: 'res/BirdSelect.wav'
     }
 ];

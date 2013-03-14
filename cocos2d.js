@@ -24,7 +24,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
-var $ALL_IN_ONE = 1;
+var $ALL_IN_ONE = 0;
 var $ALL_IN_ONE_FILE = 'BraveEgg-v0.1.js';
 
 (function () {

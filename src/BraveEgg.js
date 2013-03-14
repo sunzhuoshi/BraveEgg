@@ -36,14 +36,14 @@ EggSprite = cc.Sprite.extend({
         var actionExplosion = cc.Animate.create(animation);
         var actionHide = cc.CallFunc.create(this.hide, this, null);
         this.runAction(cc.Sequence.create(actionExplosion, actionHide));
-        cc.AudioEngine.getInstance().playEffect('res/EggExplosion');
+        cc.AudioEngine.getInstance().playEffect('res/EggExplosion.wav');
     },
     onTouchesBegan:function (touches, event) {
         for (var i=0; i<touches.length; ++i) {
             if (cc.Rect.CCRectContainsPoint(this.getBoundingBoxToWorld(), touches[i].getLocation())) {
                 if (!this.dead) {
                     this.picked = true;
-                    cc.AudioEngine.getInstance().playEffect('res/BirdSelect');
+                    cc.AudioEngine.getInstance().playEffect('res/BirdSelect.wav');
                 }
                 break;
             }
@@ -134,7 +134,7 @@ var BraveEgg = cc.Layer.extend({
             "res/CloseNormal.png",
             "res/CloseSelected.png",
             function () {
-                cc.AudioEngine.getInstance().playEffect('res/Menu');
+                cc.AudioEngine.getInstance().playEffect('res/Menu.wav');
                 history.back();
             },
             this);
@@ -143,7 +143,7 @@ var BraveEgg = cc.Layer.extend({
         this.startMenuItem = cc.MenuItemFont.create(
             'Start',
             function () {
-                cc.AudioEngine.getInstance().playEffect('res/Menu');
+                cc.AudioEngine.getInstance().playEffect('res/Menu.wav');
                 this.startMenuItem.setVisible(false);
                 this.gameStart();
             },
@@ -155,7 +155,7 @@ var BraveEgg = cc.Layer.extend({
         this.tryAgainMenuItem = cc.MenuItemFont.create(
             'Try again',
             function () {
-                cc.AudioEngine.getInstance().playEffect('res/Menu');
+                cc.AudioEngine.getInstance().playEffect('res/Menu.wav');
                 this.tryAgainMenuItem.setVisible(false);
                 this.gameStart();
             },
@@ -184,7 +184,7 @@ var BraveEgg = cc.Layer.extend({
         window.addEventListener("resize", function (event) {
             selfPointer.adjustSizeForWindow();
         });
-        cc.AudioEngine.getInstance().playMusic('res/StartBackgroundMusic', true);
+        cc.AudioEngine.getInstance().playMusic('res/StartBackgroundMusic.mp3', true);
         return true;
     },
     tick: function() {
@@ -209,7 +209,7 @@ var BraveEgg = cc.Layer.extend({
         this.schedule(this.tick, 1/60);
         this.schedule(this.spawnOneWavePig, 2);
         this.egg.respawn(size.width/2, size.height/2);
-        cc.AudioEngine.getInstance().playMusic('res/CombatBackgroundMusic');
+        cc.AudioEngine.getInstance().playMusic('res/CombatBackgroundMusic.mp3');
     },
     gameOver: function() {
         this.unschedule(this.tick);
@@ -224,7 +224,7 @@ var BraveEgg = cc.Layer.extend({
             this.tryAgainMenuItem.setVisible(true);
         }, 7);
         this.scheduleOnce(function() {
-            cc.AudioEngine.getInstance().playMusic('res/LevelFailedBackgroundMusic', false);
+            cc.AudioEngine.getInstance().playMusic('res/LevelFailedBackgroundMusic.mp3', false);
         }, 1.5);
     },
     spawnOneWavePig: function() {
